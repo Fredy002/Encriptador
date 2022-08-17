@@ -1,0 +1,147 @@
+<meta charset="UTF-8">
+
+<h1>Encriptador</h1>
+<input id="mensaje">
+<button id="botonEncriptado">Encriptar</button>
+<button id="botonDesencriptado">Desencriptar</button>
+<br> <br><textarea name="mostrarPantalla" id="mostrarPantalla" cols="30" rows="10"></textarea>
+
+<script>
+    var mensaje = document.getElementById("mensaje");
+    var botonEncriptado = document.getElementById("botonEncriptado");
+    var botonDesencriptado = document.getElementById("botonDesencriptado");
+    var encriptado = "";
+    var desencriptado = "";
+
+    function encriptador() {
+        var mensaje = document.getElementById("mensaje").value;
+        for (var i = 0; i < mensaje.length; i++) {
+            switch (mensaje[i]) {
+                case "a":
+                    encriptado += "ai";
+                    break;
+                case "e":
+                    encriptado += "enter";
+                    break;
+                case "i":
+                    encriptado += "imes";
+                    break;
+                case "o":
+                    encriptado += "ober";
+                    break;
+                case "u":
+                    encriptado += "ufat";
+                    break;
+                default:
+                    encriptado += mensaje[i];
+                    break;
+            }
+
+        }
+        document.getElementById("mostrarPantalla").innerHTML = encriptado;
+        console.log("<br>");
+    }
+
+    function desencriptador() {
+        var mensaje = document.getElementById("mensaje").value;
+        var almacenador = "";
+        for (var i = 0; i < mensaje.length; i++) {
+            switch (mensaje[i]) {
+                case "a":
+                    almacenador += "a";
+                    break;
+                case "e":
+                    almacenador += "e";
+                    break;
+                case "i":
+                    almacenador += "i";
+                    break;
+                case "o":
+                    almacenador += "o";
+                    break;
+                case "u":
+                    almacenador += "u";
+                    break;
+                case "n":
+                    almacenador += "n";
+                    break;
+                case "t":
+                    almacenador += "t";
+                    break;
+                case "r":
+                    almacenador += "r";
+                    break;
+                case "m":
+                    almacenador += "m";
+                    break;
+                case "s":
+                    almacenador += "s";
+                    break;
+                case "b":
+                    almacenador += "b";
+                    break;
+                case "f":
+                    almacenador += "f";
+                    break;
+                default:
+                    desencriptado += mensaje[i];
+                    break;
+            }
+
+
+            if (almacenador.length === 2) {
+                if (almacenador === "ai") {
+                    desencriptado += "a";
+                    almacenador = "";
+                }
+            } else if (almacenador.length === 4) {
+                if (almacenador === "imes") {
+                    desencriptado += "i";
+                    almacenador = "";
+                } else if (almacenador === "ober") {
+                    desencriptado += "o";
+                    almacenador = "";
+                } else if (almacenador === "ufat") {
+                    desencriptado += "u";
+                    almacenador = "";
+                }
+            } else if (almacenador.length === 5) {
+                if (almacenador === "enter") {
+                    desencriptado += "e";
+                    almacenador = "";
+                }
+            } else if (almacenador.length === 1) {
+                if (almacenador === "t") {
+                    desencriptado += "t";
+                    almacenador = "";
+                } else if (almacenador === "n") {
+                    desencriptado += "n";
+                    almacenador = "";
+                } else if (almacenador === "r") {
+                    desencriptado += "r";
+                    almacenador = "";
+                } else if (almacenador === "m") {
+                    desencriptado += "m";
+                    almacenador = "";
+                } else if (almacenador === "s") {
+                    desencriptado += "s";
+                    almacenador = "";
+                } else if (almacenador === "b") {
+                    desencriptado += "b";
+                    almacenador = "";
+                } else if (almacenador === "f") {
+                    desencriptado += "f";
+                    almacenador = "";
+                }
+            }
+        }
+        document.getElementById("mostrarPantalla").innerHTML = desencriptado;
+        console.log("<br>");
+    }
+
+    botonEncriptado.onclick = encriptador;
+
+    botonDesencriptado.onclick = desencriptador;
+
+    //Codigo realizado por Fredy Almeyda
+</script>
